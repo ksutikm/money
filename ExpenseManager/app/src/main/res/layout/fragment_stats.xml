@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/dimen_60"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.stats.StatsFragment"
+    android:background="@color/default_screen" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/expense_stats_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/stats_when"
+        style="@style/DetailStyleHeadline"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:fontFamily="@font/poppins_light"
+        android:textSize="@dimen/dimen_20"
+        android:text="@string/select_a_range"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/start_when_layout"
+        style="@style/PrimaryEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_16"
+        android:clickable="true"
+        android:focusable="true"
+        android:hint="@string/start_stats"
+        app:endIconDrawable="@drawable/ic_calendar"
+        app:endIconMode="custom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/end_when_layout"
+        app:layout_constraintTop_toBottomOf="@id/stats_when">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/start_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/end_when_layout"
+            style="@style/PrimaryEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_16"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint="@string/end_stats"
+            app:endIconDrawable="@drawable/ic_calendar"
+            app:endIconMode="custom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/start_when_layout"
+            app:layout_constraintTop_toBottomOf="@+id/stats_when">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/end_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_16"
+            android:shadowColor="@color/teal_700"
+            style="@style/PrimaryEditText"
+            android:fontFamily="@font/rubik"
+            android:text="Ok"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/end_when_layout" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_margin="@dimen/dimen_16"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button">
+
+        </com.github.mikephil.charting.charts.PieChart>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
